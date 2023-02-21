@@ -2,7 +2,7 @@ require("dotenv").config();
 const axios = require("axios");
 const { Telegraf , Markup } = require('telegraf');
  
-axios.defaults.baseURL = 'http://127.0.0.1:5001/user';
+axios.defaults.baseURL = 'deplabdb.netlify.app/user';
 const resetStore = async(chatID) => {
  await axios.patch(`/chatId/${chatID}`,{
     secondTap : false,
