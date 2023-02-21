@@ -2,7 +2,7 @@ require("dotenv").config();
 const axios = require("axios");
 const { Telegraf , Markup } = require('telegraf');
  
-axios.defaults.baseURL = 'deplabdb.netlify.app/user';
+axios.defaults.baseURL = 'https://dbhelper.herokuapp.com/user';
 const resetStore = async(chatID) => {
  await axios.patch(`/chatId/${chatID}`,{
     secondTap : false,
