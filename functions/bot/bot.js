@@ -13,7 +13,7 @@ const resetStore = async(chatID) => {
   })
 }
 
-const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
+const bot = new Telegraf("6055809580:AAFah6MeLvKhDvXqd8lqwIYCb-xN7TGjYgc");
 
 const appKeyboard = Markup.keyboard([["NSQ"],["TD"],["TSquad"],["Trident"],["APPIE"],])
 bot.start(async(ctx) => {
@@ -21,7 +21,7 @@ bot.start(async(ctx) => {
 try {
   await  axios.post("/",{
     chatId : ctx.chat.id
-  })
+  })    
 } catch (error) {
   throw new Error(error);
 }
