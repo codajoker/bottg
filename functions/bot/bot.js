@@ -2,7 +2,7 @@ require("dotenv").config();
 const axios = require("axios");
 const { Telegraf , Markup } = require('telegraf');
  
-axios.defaults.baseURL = 'https://dbhelper.herokuapp.com/user';
+axios.defaults.baseURL = 'https://dephelp.herokuapp.com/user';
 const resetStore = async(chatID) => {
  await axios.patch(`/chatId/${chatID}`,{
     secondTap : false,
@@ -36,9 +36,7 @@ bot.on('text',async (ctx) => {
     text = ctx.update.message.text;
   
   if (text === "Вернуться на главное меню") {
-    console.log('====================================');
-  console.log(text);
-  console.log('====================================');
+  
    resetStore(ctx.chat.id);
 
    return ctx.reply('Выберите меню',appKeyboard)
@@ -48,9 +46,7 @@ bot.on('text',async (ctx) => {
     await  axios.patch(`/chatId/${ctx.chat.id}`, {
       offerID : text,
           })
-          console.log('====================================');
-          console.log(text);
-          console.log('====================================');
+     
   switch (store.data.app) {
   
     case "NSQ":
